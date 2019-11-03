@@ -15,12 +15,19 @@ public class LoginController {
 		this.result = result;
 	}
 	
-	public void loga() {
-		usuarioLogado.setLogin("israel");
+	private void formulario() {	}
+	
+	public void loga(String login, String senha) {
+		if(login.equals("israel") && senha.equals("123")) {
+			this.usuarioLogado.setLogin("israel");
+			result.redirectTo(ProdutoController.class).lista();
+		}else{
+			result.redirectTo(LoginController.class).formulario();
+		}
 	}
 	
+
 	public void exibe() {
 		result.include("usuario",usuarioLogado.getLogin());
 	}
-
 }

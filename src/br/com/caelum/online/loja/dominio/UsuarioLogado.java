@@ -8,8 +8,8 @@ import br.com.caelum.vraptor.ioc.SessionScoped;
 public class UsuarioLogado {
 
 	private String login;
-
 	public String getLogin() {
+		
 		return login;
 	}
 
